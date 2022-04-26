@@ -15,11 +15,11 @@ def checkin(cookie):
     dict_response = json.loads(response)
 
     if dict_response['message'] in ["Checkin! Get 1 Day", "Please Try Tomorrow"]:
-        print('打卡成功！')
+        print('success')
     else:
-        print('打卡失败！')                    
+        print('failed')                    
         print(dict_response['message'])
 
-if __name__ == "__main__":
+def main(event, context):
     cookie =  os.environ.get('cookie')
     checkin(cookie)
