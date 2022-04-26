@@ -15,17 +15,16 @@ def checkin(cookie, token):
     dict_response = json.loads(response)
 
     if dict_response['message'] in ["Checkin! Get 1 Day", "Please Try Tomorrow"]:
-        content = "GLADOS打卡成功"
-        title = "GLADOS打卡成功"
+        title = content = "GLADOS打卡成功"
     else:
-        content = 'GLADOS打卡失败\n'+dict_response['message']                    
+        content = dict_response['message']                    
         title = "GLADOS打卡失败"
 
     push_data = {
     "token":token,
     "title":title,
     "content":content
-}
+    }
 
     push_url = "http://www.pushplus.plus/send/"
 
