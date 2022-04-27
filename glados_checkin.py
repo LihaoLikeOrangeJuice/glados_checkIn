@@ -5,7 +5,9 @@ import os
 import requests
 
 
-def checkin(cookie, token):
+def checkin():
+    cookie = os.environ.get('cookie')
+
     checkin_url = "https://glados.one/api/user/checkin"
 
     headers = {
@@ -32,6 +34,8 @@ def checkin(cookie, token):
 
         logging.error("GLADOS打卡失败\n" + response)
 
+    token = os.environ.get('token')
+
     push_data = {"token": token, "title": title, "content": content}
 
     push_url = "http://www.pushplus.plus/send/"
@@ -42,9 +46,8 @@ def checkin(cookie, token):
 def start(event, context):
     logging.basicConfig(
         format='%(name)s - %(levelname)s - %(module)s: %(message)s')
-    token = os.environ.get('token')
-    cookie = os.environ.get('cookie')
-    checkin(cookie, token)
+
+    checkin()
 
 
 if __name__ == "__main__":
