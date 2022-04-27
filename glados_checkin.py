@@ -33,7 +33,7 @@ def checkin(cookie, token):
     print(response)
         
 
-def main(event, context):
+def start(event, context):
     token = os.environ.get('token')
     cookie =  os.environ.get('cookie')
     checkin(cookie, token)
