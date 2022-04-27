@@ -45,3 +45,7 @@ def start(event, context):
     token = os.environ.get('token')
     cookie = os.environ.get('cookie')
     checkin(cookie, token)
+
+
+if __name__ == "__main__":
+    start()
