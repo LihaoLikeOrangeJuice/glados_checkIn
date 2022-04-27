@@ -48,7 +48,3 @@ def start(event, context):
         format='%(name)s - %(levelname)s - %(module)s: %(message)s')
 
     checkin()
-
-
-if __name__ == "__main__":
-    start()
