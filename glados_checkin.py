@@ -43,8 +43,11 @@ def checkin():
     requests.post(push_url, data=push_data).text
 
 
-def start(event, context):
+def start(event=0, context=0):
     logging.basicConfig(
         format='%(name)s - %(levelname)s - %(module)s: %(message)s')
 
     checkin()
+
+
+start()
