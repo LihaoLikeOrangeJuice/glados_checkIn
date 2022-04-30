@@ -40,7 +40,7 @@ def checkin():
 
     push_url = "http://www.pushplus.plus/send/"
 
-    requests.post(push_url, data=push_data).text
+    requests.post(push_url, data=push_data)
 
 
 def start(event=0, context=0):
