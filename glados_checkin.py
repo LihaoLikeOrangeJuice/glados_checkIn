@@ -16,7 +16,7 @@ def checkin():
         "cookie": cookie
     }
 
-    data = {"token": "glados_network"}
+    data = {"token": "glados.network"}
 
     response = requests.post(checkin_url, headers=headers, data=data).text
     dict_response = json.loads(response)
