@@ -2,7 +2,8 @@
 
 ## 简介
 
-- 部署在腾讯云函数上
-- 入口函数是start
-- 第一个环境变量名字为cookie，值为GLADOS的cookie的值
-- pushplus推送加推送，设置环境变量名字为token，值为token的值
+- 腾讯云函数部署
+- pushplus推送加推送打卡信息
+- 入口函数为start
+- 设置环境变量cookie，值为GLADOS网站cookie的值
+- 设置环境变量token，值为pushplus推送加token的值
