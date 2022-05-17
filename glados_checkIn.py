@@ -48,6 +48,3 @@ def start(event=0, context=0):
         format='%(name)s - %(levelname)s - %(module)s: %(message)s')
 
     checkin()
-
-
-start()
