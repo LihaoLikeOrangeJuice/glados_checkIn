@@ -2,7 +2,7 @@
 
 ## 简介
 
-- 腾讯云函数部署
+- 云函数部署
 - pushplus推送加推送打卡信息
 - 入口函数为start
 - 设置环境变量cookie，值为GLADOS网站cookie的值
