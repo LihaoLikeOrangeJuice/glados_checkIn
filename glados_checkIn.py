@@ -1,4 +1,3 @@
-import json
 import os
 
 import requests
@@ -15,8 +14,8 @@ def checkin():
     }
     data = {"token": "glados.network"}
 
-    response = requests.post(checkin_url, headers=headers, data=data).text
-    dict_response = json.loads(response)
+    response = requests.post(checkin_url, headers=headers, data=data)
+    dict_response = response.json()
 
     if dict_response['message'] in [
             "Checkin! Get 1 Day", "Please Try Tomorrow"
@@ -27,7 +26,7 @@ def checkin():
         content = dict_response['message']
         title = "GLADOS打卡失败"
         logger.error("GLADOS打卡失败")
-        logger.error(response)
+        logger.error(response.text)
 
     token = os.environ.get('token')
     push_data = {"token": token, "title": title, "content": content}
