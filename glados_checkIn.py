@@ -31,7 +31,7 @@ def checkin():
     token = os.environ.get('token')
     push_data = {"token": token, "title": title, "content": content}
     push_url = "http://www.pushplus.plus/send/"
-    requests.post(push_url, data=push_data)
+    logger.info(requests.post(push_url, data=push_data).text)
 
 
 def start(event=0, context=0):
